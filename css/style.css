@@ -1,0 +1,170 @@
+body {
+	padding: 1vw
+}
+
+img#countryImage {
+	height: 12vw;
+	opacity: 0.6
+
+}
+
+img#flag {
+	height: 12vw;
+	opacity: 0.6
+}
+
+p {
+	margin-bottom: 0;
+	font-size: 4vw;
+}
+
+canvas {
+	border-radius: 2vw
+}
+
+.row {
+	margin-bottom: 10px!important;
+}
+
+.selectize-dropdown-content {
+	max-height: 300px!important
+}
+
+.verticalAlign {
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+	font-size: 1.7vw;
+	left: 25%;
+}
+
+.nameAndScore {
+	line-height: 13vw
+}
+
+h1 {
+
+  font-size: 4.5vw;
+  font-family: "Lato", sans-serif!important;
+  font-weight: 900!important;
+  text-align: center;
+
+}
+
+h2 {
+
+  font-size: 2.5vw;
+  font-weight:300!important;
+  text-align: center;
+
+}
+
+h3 {
+
+  font-size:3vw;
+  font-weight:400!important;
+  text-align: center;
+}
+
+h5 {
+
+	font-size: 3vw;
+	font-weight: 300!important;
+	margin-left: 20px;
+	color: #808080;
+
+}
+
+h6 {
+	font-size: 3vw;
+	font-weight: 500!important;
+	margin-left: 20px;
+	text-align: center;
+}
+
+body {
+	
+	font-family: "Lato", sans-serif;
+}
+
+.action-btns {
+	background: white;
+    border: 1px solid gray;
+    border-radius: 2vw;
+    padding: 1vw;
+    width: 100%;
+    font-size: 2.6vw
+}
+
+.action-btns.selected {
+	background: white;
+    border: 1px solid #F39C12;
+    border-radius: 2vw;
+    padding: 10px;
+    width: 100%;
+    color: #F39C12;
+    font-size: 2.6vw
+}
+
+.rangeslider__fill {
+	background: #F39C12
+}
+
+button:focus {outline:0;}
+
+.rangeslider--horizontal {
+	height: 1vw!important;
+}
+
+.rangeslider__handle {
+	height: 2vw!important;
+	width: 2vw!important;
+	top: -0.5vw!important;
+}
+
+.rangeslider__handle::after {
+	height: 1vw!important;
+	width: 1vw!important;
+}
+
+.lastValue {
+	position: absolute;
+    right: 40px;
+    top: 30%;
+    font-size: 2.5vw
+}
+
+#sliderLabel {
+	font-size: 2vw;
+	color: gray
+}
+
+#currentFilter {
+	color: #F39C12;
+}
+
+@media (min-width: 700px) and (max-width: 850px) {
+	canvas {
+		margin-top: 3vw;
+	}
+}
+
+@media (min-width: 600px) and (max-width: 699px) {
+	canvas {
+		margin-top: 5vw;
+	}
+}
+
+@media (min-width: 500px) and (max-width: 599px)  {
+	canvas {
+		margin-top: 0;
+	}
+}
+
+@media (max-width: 499px) {
+	canvas {
+		margin-top: 0;
+	}
+}

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Emerging Market Tracker</title>
+    <meta name=”viewport” content=”width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no” />
+    <script type="text/javascript" src="./js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="./js/rangeslider.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/rangeslider.min.css">
+    <link rel="stylesheet" href="./bootstrap-4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="./bootstrap-4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,700,900" rel="stylesheet">
+    <script type="text/javascript" src="./js/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <script type="text/javascript" src="./js/selectize.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/selectize.default.css">
+    <script type="text/javascript" src="./js/d3.v3.min.js"></script>
+    <script type="text/javascript" src="./js/chart.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/chart.min.css">
+</head>
+<body>
+    <h1><span style="color: #F39C12;">mint</span> EMERGING MARKET TRACKER </h1>
+    
+    <h6>A summary of economic activity across 10 large emerging markets based on seven high frequency indicators</h6>
+
+    <h2><i>Use the slider to see how these indicators performed over the past year</i></h2>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8 col-10">
+                <form id="sliderData" style="padding-top: 12px;">
+                    <input id="slider1" type="range">
+                </form>
+            </div>
+            <div class="col-2">
+                <span id="sliderLabel"></span>
+            </div>
+        </div>
+    </div>
+
+    <h3 id="indiaNotAtTop" style="display: none">In <i id="currentMonth"></i>, while <b id="topCountry"></b> topped the list, <b>India</b> came in at <b id="indiaPosition">No. 2</b> and <span id="lastCountry"></span> last, based on a composite score of all the indicators.</h3>
+
+    <h3 id="indiaAtTop" style="display: none">In <i id="currentMonth"></i>, India topped the list while <span id="lastCountry"></span> came last, based on a composite score of all the indicators.</h3>
+
+    <br>
+
+    <div class="container-fluid">
+        <div id="content-container">
+            <div class="row" style="margin-bottom: 40px!important">
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-4 text-center">
+                            <button class="action-btns selected" onclick="changeCanvas(event, 'real_gdp_growth', 'Real GDP growth')">Real GDP growth</button>
+                        </div>
+                        <div class="col-4 text-center">
+                            <button class="action-btns" onclick="changeCanvas(event, 'pmi_manufacturing', 'PMI Manufacturing')">PMI Manufacturing</button>
+                        </div>
+                        <div class="col-4 text-center">
+                            <button class="action-btns" onclick="changeCanvas(event, 'cpi_inflation', 'CPI Inflation')">CPI Inflation</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        
+                        <div class="col-6 text-center">
+                            <button class="action-btns" onclick="changeCanvas(event, 'export_growth', 'Export growth')">Export growth</button>
+                        </div>
+                        <div class="col-6 text-center">
+                            <button class="action-btns" onclick="changeCanvas(event, 'import_cover', 'Import cover')">Import cover</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        
+                        <div class="col-6 text-center">
+                            <button class="action-btns" onclick="changeCanvas(event, 'exchange_rate_movement', 'Exchange rate movement')">Exchange rate movement</button>
+                        </div>
+                        <div class="col-6 text-center">
+                            <button class="action-btns" onclick="changeCanvas(event, 'stock_market_capitalization', 'Stock market capitalization')">Stock market capitalization</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-7">
+                    <div class="row">
+                        <div class="col-7 text-center">
+                            <h3>Country</h3>
+                        </div>
+                        <div class="col-5 text-center">
+                            <h3>Composite Index Score</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <h3>
+                        <span id="currentFilter">
+                            Real GDP growth
+                        </span>
+                        <div class="row">
+                            <div class="col-12">
+                                <span style="font-size: 1.8vw">
+                                    Better Performance &#8594
+                                </span>
+                                <div class="d-inline-block m-auto" style="background: #D98569; width: 1.5vw; height: 1.5vw; border-radius: 1.5vw;position: relative;top: 0.2vw;">
+                                </div>
+                                <div class="d-inline-block m-auto" style="background: #F8D88D; width: 1.5vw; height: 1.5vw; border-radius: 1.5vw;position: relative;top: 0.2vw;">
+                                </div>
+                                <div class="d-inline-block m-auto" style="background: #BFC99B; width: 1.5vw; height: 1.5vw; border-radius: 1.5vw;position: relative;top: 0.2vw;">
+                                </div>
+                            </div>
+                        </div>
+                    </h3>
+                </div>
+                <div class="col-1">
+                </div>
+            </div>
+            <div id="rows">
+            </div>
+        </div>
+    </div>
+
+    <h5><a href="mintdata.csv" target="_blank">Download as CSV</a></h5>
+
+    <br>
+
+    <h5><i>NOTE:</i><b> Exchange rate movement (m-o-m, in %)</b> denotes the percentage month-on-month change in the exchange rate of the national currencies with respect to dollar in the last month. Negative values indicate depreciation.
+
+    <b>Stock market capitalization (m-o-m, in %)</b> denotes the percentage month-on-month change in the aggregate market value of all stocks traded in the economy in the past month, as reported by Bloomberg.
+
+    <b>Export growth</b> has been computed in terms of y-o-y % change in dollar values of exports for each economy.
+
+    The <b>purchasing managers' index (PMI)</b> manufacturing data compiled by IHS Markit is a weighted average of five indices: new orders (30%), output (25%), employment (20%), suppliers' delivery times (15%) and stocks of purchases (10%). A PMI reading above 50 indicates expansion in manufacturing activity, whereas a reading below 50 indicates contraction.
+
+    The <b>composite index score</b> is a normalized score based on an equally weighted average of normalized scores for each of the indicators. In calculating the normalized scores, the best-performing economy's value on any one parameter (say PMI) is taken as 100 and relative scores are derived based on the distance of each economy from that score for that month.
+
+    The closest comparable periods have been considered for each economy. For all economies the real GDP growth is as of the December ended quarter. For most economies, for most of the other indicators, the values are as of March. Where such data is not available the February data has been considered.</h5><br>
+
+    <h5>Source: Bloomberg, Mint calculation<br>
+    All data as of 14 April 2020<br>
+
+    <br><b>Interactive built by Pooja</b></h5>
+
+
+</body>
+</html>
