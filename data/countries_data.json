@@ -4,7 +4,6 @@
     "flag_url": "data/flags/china.png",
     "country_image_url": "data/countries_images/china.png",
     "composite_index_score": {
-      "Apr-19": 75,
       "May-19": 57,
       "Jun-19": 51,
       "Jul-19": 57,
@@ -15,7 +14,8 @@
       "Dec-19": 62,
       "Jan-20": 44,
       "Feb-20": 41,
-      "Mar-20": 68
+      "Mar-20": 68,
+      "Apr-20": 67
     },
     "datasets": {
       "real_gdp_growth": [
@@ -763,7 +763,6 @@
     "flag_url": "data/flags/philippines.png",
     "country_image_url": "data/countries_images/philippines.png",
     "composite_index_score": {
-      "Apr-19": 72,
       "May-19": 70,
       "Jun-19": 65,
       "Jul-19": 65,
@@ -774,7 +773,8 @@
       "Dec-19": 63,
       "Jan-20": 49,
       "Feb-20": 65,
-      "Mar-20": 45
+      "Mar-20": 45,
+      "Apr-20": 56
     },
     "datasets": {
       "real_gdp_growth": [
@@ -1525,7 +1525,8 @@
       "Dec-19": 34,
       "Jan-20": 51,
       "Feb-20": 65,
-      "Mar-20": 41
+      "Mar-20": 41,
+      "Apr-20": 35
     },
     "datasets": {
       "real_gdp_growth": [
@@ -2269,7 +2270,6 @@
     "flag_url": "data/flags/thailand.png",
     "country_image_url": "data/countries_images/thailand.png",
     "composite_index_score": {
-      "Apr-19": 62,
       "May-19": 65,
       "Jun-19": 62,
       "Jul-19": 55,
@@ -2280,7 +2280,8 @@
       "Dec-19": 42,
       "Jan-20": 42,
       "Feb-20": 47,
-      "Mar-20": 62
+      "Mar-20": 62,
+      "Apr-20": 70
     },
     "datasets": {
       "real_gdp_growth": [
@@ -3024,7 +3025,6 @@
     "flag_url": "data/flags/russia.png",
     "country_image_url": "data/countries_images/russia.png",
     "composite_index_score": {
-      "Apr-19": 75,
       "May-19": 64,
       "Jun-19": 50,
       "Jul-19": 53,
@@ -3035,7 +3035,8 @@
       "Dec-19": 54,
       "Jan-20": 65,
       "Feb-20": 53,
-      "Mar-20": 51
+      "Mar-20": 51,
+      "Apr-20": 70
     },
     "datasets": {
       "real_gdp_growth": [
@@ -3779,7 +3780,6 @@
     "flag_url": "data/flags/india.png",
     "country_image_url": "data/countries_images/india.png",
     "composite_index_score": {
-      "Apr-19": 74,
       "May-19": 73,
       "Jun-19": 54,
       "Jul-19": 54,
@@ -3790,7 +3790,8 @@
       "Dec-19": 51,
       "Jan-20": 55,
       "Feb-20": 74,
-      "Mar-20": 54
+      "Mar-20": 54,
+      "Apr-20": 40
     },
     "datasets": {
       "real_gdp_growth": [
@@ -4522,7 +4523,6 @@
     "flag_url": "data/flags/brazil.png",
     "country_image_url": "data/countries_images/brazil.png",
     "composite_index_score": {
-      "Apr-19": 63,
       "May-19": 64,
       "Jun-19": 71,
       "Jul-19": 60,
@@ -4533,7 +4533,8 @@
       "Dec-19": 62,
       "Jan-20": 42,
       "Feb-20": 53,
-      "Mar-20": 58
+      "Mar-20": 58,
+      "Apr-20": 46
     },
     "datasets": {
       "real_gdp_growth": [
@@ -5269,7 +5270,6 @@
     "flag_url": "data/flags/indonesia.png",
     "country_image_url": "data/countries_images/indonesia.png",
     "composite_index_score": {
-      "Apr-19": 59,
       "May-19": 55,
       "Jun-19": 52,
       "Jul-19": 51,
@@ -5280,7 +5280,8 @@
       "Dec-19": 51,
       "Jan-20": 57,
       "Feb-20": 67,
-      "Mar-20": 51
+      "Mar-20": 51,
+      "Apr-20": 48
     },
     "datasets": {
       "real_gdp_growth": [
@@ -6028,7 +6029,6 @@
     "flag_url": "data/flags/malaysia.png",
     "country_image_url": "data/countries_images/malaysia.png",
     "composite_index_score": {
-      "Apr-19": 54,
       "May-19": 58,
       "Jun-19": 39,
       "Jul-19": 43,
@@ -6039,7 +6039,8 @@
       "Dec-19": 48,
       "Jan-20": 52,
       "Feb-20": 59,
-      "Mar-20": 61
+      "Mar-20": 61,
+      "Apr-20": 58
     },
     "datasets": {
       "real_gdp_growth": [
@@ -6779,7 +6780,6 @@
     "flag_url": "data/flags/turkey.png",
     "country_image_url": "data/countries_images/turkey.png",
     "composite_index_score": {
-      "Apr-19": 14,
       "May-19": 14,
       "Jun-19": 30,
       "Jul-19": 45,
@@ -6790,7 +6790,8 @@
       "Dec-19": 34,
       "Jan-20": 48,
       "Feb-20": 55,
-      "Mar-20": 45
+      "Mar-20": 45,
+      "Apr-20": 38
     },
     "datasets": {
       "real_gdp_growth": [
