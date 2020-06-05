@@ -153,7 +153,7 @@ function renderUI(resData) {
            }
            return false
         })
-        var trimmedCanvasData = canvasData.slice(0,sliceIndexValue+1);
+        var trimmedCanvasData = canvasData.slice(0,sliceIndexValue);
         //console.log("companyName",obj.name);
         //console.log("trimmedCanvasData",trimmedCanvasData);
         //console.log("sliceIndexValue", sliceIndexValue)
@@ -229,11 +229,11 @@ function renderUI(resData) {
            }
            return false
         })
-        var trimmedCanvasData = canvasData.slice(0,sliceIndexValue+1);
+        var trimmedCanvasData = canvasData.slice(0,sliceIndexValue);
         
         //var trimmedCanvasData = canvasData.slice(0,parseInt(sliderVal)+window.sliderToJsonDataGap + 1)
         $("#"+countryData.name.toLowerCase() + "_lastValue").text(trimmedCanvasData[trimmedCanvasData.length - 1].y)
-        renderCanvas(countryData.name.toLowerCase()+'_canvas', trimmedCanvasData, labels.slice(0,sliceIndexValue + 1), bgColor, 2);
+        renderCanvas(countryData.name.toLowerCase()+'_canvas', trimmedCanvasData, labels.slice(0,sliceIndexValue), bgColor, 2);
     })
 }
 window.currentKey = 'real_gdp_growth';
