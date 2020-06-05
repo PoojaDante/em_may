@@ -30,7 +30,7 @@ $(function(){
     } else {
         window.canvasRightPadding = 80;
     }
-    window.sliderToJsonDataGap = 13;
+    window.sliderToJsonDataGap = 12;
     window.monthValues = ["May-19", "Jun-19", "Jul-19", "Aug-19", "Sep-19","Oct-19","Nov-19","Dec-19","Jan-20","Feb-20","Mar-20","Apr-20"];
     $("#slider1").attr('min', 0);
     $("#slider1").attr('max', monthValues.length -1);
