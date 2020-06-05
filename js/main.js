@@ -125,8 +125,7 @@ function renderUI(resData) {
 
         $("#rows").append(row);
     })
-
-        //<h3>In <i id="currentMonth">October</i>, while the <b id="topCountry">Philippines</b> topped the list, <b id="secondCountry">India</b> came in at <b>No. 2</b> and <span id="lastCountry">Turkey</span> last, based on a composite score of all the indicators.</h3>
+    
     var indiasPosition = 0;
     var countryToBgColor = [];
 
@@ -143,7 +142,23 @@ function renderUI(resData) {
             }
         });
         var sliderVal = parseInt($("#slider1").val());
-        var trimmedCanvasData = canvasData.slice(0,parseInt(sliderVal)+window.sliderToJsonDataGap + 1)
+        var sliceIndexValue = canvasData.length;
+        const selectedMoment = moment(window.monthValues[sliderVal], 'MMM-YY')
+        //console.log(selectedMoment)
+        canvasData.find((obj, i)=>{
+           if(moment(obj.t, 'MMM-YY').isAfter(selectedMoment)) {
+              // console.log("WOW", moment(obj.t, 'MMM-YY').toDate())
+              sliceIndexValue = i; 
+              return true
+           }
+           return false
+        })
+        var trimmedCanvasData = canvasData.slice(0,sliceIndexValue+1);
+        //console.log("companyName",obj.name);
+        //console.log("trimmedCanvasData",trimmedCanvasData);
+        //console.log("sliceIndexValue", sliceIndexValue)
+        //console.log(obj.name, trimmedCanvasData);
+        //console.log("canvasData", canvasData)
         countryToBgColor.push({
             name: obj.name,
             score: trimmedCanvasData[trimmedCanvasData.length - 1].y
@@ -203,9 +218,22 @@ function renderUI(resData) {
         }).color;
 
         var sliderVal = parseInt($("#slider1").val());
-        var trimmedCanvasData = canvasData.slice(0,parseInt(sliderVal)+window.sliderToJsonDataGap + 1)
+        var sliceIndexValue = canvasData.length;
+        const selectedMoment = moment(window.monthValues[sliderVal], 'MMM-YY')
+        //console.log(selectedMoment)
+        canvasData.find((obj, i)=>{
+           if(moment(obj.t, 'MMM-YY').isAfter(selectedMoment)) {
+              // console.log("WOW", moment(obj.t, 'MMM-YY').toDate())
+              sliceIndexValue = i; 
+              return true
+           }
+           return false
+        })
+        var trimmedCanvasData = canvasData.slice(0,sliceIndexValue+1);
+        
+        //var trimmedCanvasData = canvasData.slice(0,parseInt(sliderVal)+window.sliderToJsonDataGap + 1)
         $("#"+countryData.name.toLowerCase() + "_lastValue").text(trimmedCanvasData[trimmedCanvasData.length - 1].y)
-        renderCanvas(countryData.name.toLowerCase()+'_canvas', trimmedCanvasData, labels.slice(0,parseInt(sliderVal)+window.sliderToJsonDataGap + 1), bgColor, 2);
+        renderCanvas(countryData.name.toLowerCase()+'_canvas', trimmedCanvasData, labels.slice(0,sliceIndexValue + 1), bgColor, 2);
     })
 }
 window.currentKey = 'real_gdp_growth';
