@@ -185,7 +185,7 @@ function renderUI(resData) {
         if (window.currentKey === 'cpi_inflation') {
             if (i<=2) {
                 obj.color = "#D98569"
-            } else if ( i>=2 && i<=5) {
+            } else if ( i>=4 && i<=6) {
                 obj.color = "#F8D88D"
             } else {
                 obj.color = "#BFC99B"
@@ -193,7 +193,7 @@ function renderUI(resData) {
         } else {
             if (i<=2) {
                 obj.color = "#BFC99B"
-            } else if ( i>=2 && i<=5) {
+            } else if ( i>=4 && i<=6) {
                 obj.color = "#F8D88D"
             } else {
                 obj.color = "#D98569"
