@@ -183,7 +183,7 @@ function renderUI(resData) {
         return (a.score > b.score ? -1 : 1)
     }).map(function(obj, i){
         if (window.currentKey === 'cpi_inflation') {
-            if (i<=2) {
+            if (i<=3) {
                 obj.color = "#D98569"
             } else if ( i>=1 && i<=7) {
                 obj.color = "#F8D88D"
