@@ -193,7 +193,7 @@ function renderUI(resData) {
         } else {
             if (i<=2) {
                 obj.color = "#BFC99B"
-            } else if ( i>=2 && i<=) {
+            } else if ( i>=2 && i<=5) {
                 obj.color = "#F8D88D"
             } else {
                 obj.color = "#D98569"
