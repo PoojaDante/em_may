@@ -100,7 +100,7 @@ function renderUI(resData) {
         if (obj.name.toLowerCase() === 'india') {
             score.style.fontWeight = '900';
         }
-        score.innerText = obj.current_composite_index_score;
+        score.innerText = Math.round(obj.current_composite_index_score);
         compositeScoreDiv.append(score);
         score.setAttribute('class', 'nameAndScore');
         flagRow.append(compositeScoreDiv);
@@ -178,14 +178,15 @@ function renderUI(resData) {
         $("#indiaNotAtTop #indiaPosition").text("No. "+indiasPosition)
         $("#indiaNotAtTop #lastCountry").text(window.resData[window.resData.length-1].name)
     }
-
     countryToBgColor = countryToBgColor.sort(function(a,b){
         return (a.score > b.score ? -1 : 1)
-    }).map(function(obj, i){
+    })
+    var previousColor = null;
+    countryToBgColor = countryToBgColor.map(function(obj, i){
         if (window.currentKey === 'cpi_inflation') {
-            if (i<=3) {
+            if (i<=2) {
                 obj.color = "#D98569"
-            } else if ( i>=1 && i<=7) {
+            } else if ( i>=3 && i<=6) {
                 obj.color = "#F8D88D"
             } else {
                 obj.color = "#BFC99B"
@@ -193,12 +194,16 @@ function renderUI(resData) {
         } else {
             if (i<=2) {
                 obj.color = "#BFC99B"
-            } else if ( i>=1 && i<=7) {
+            } else if ( i>=3 && i<=6) {
                 obj.color = "#F8D88D"
             } else {
                 obj.color = "#D98569"
             }
         }
+        if (i>1 && countryToBgColor[i].score === countryToBgColor[i-1].score) {
+            obj.color = previousColor;
+        }
+        previousColor = obj.color;
         return obj
     });
 
