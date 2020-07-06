@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Emerging Market Tracker</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js" integrity="sha512-rmZcZsyhe0/MAjquhTgiUcb4d9knaFc7b5xAfju483gbEXTkeJRUMIPk6s3ySZMYUHEcjKbjLjyddGWMrNEvZg==" crossorigin="anonymous"></script>
     <meta name=”viewport” content=”width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no” />
     <script type="text/javascript" src="./js/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="./js/rangeslider.min.js"></script>
@@ -39,15 +40,15 @@
         </div>
     </div>
 
-    <h3 id="indiaNotAtTop" style="display: none">In <i id="currentMonth"></i>, while <b id="topCountry"></b> topped the list, <b>India</b> came in at <b id="indiaPosition">No. 2</b> and <span id="lastCountry"></span> last, based on a composite score of all the indicators.</h3>
+    <h3 id="indiaNotAtTop" style="display: none">In <i class="currentMonth"></i>, while <b id="topCountry"></b> topped the list, <b>India</b> came in at <b id="indiaPosition">No. 2</b> and <span id="lastCountry"></span> last, based on a composite score of all the indicators.</h3>
 
-    <h3 id="indiaAtTop" style="display: none">In <i id="currentMonth"></i><i id="currentYear"></i>, India topped the list while <span id="lastCountry"></span> came last, based on a composite score of all the indicators.</h3>
+    <h3 id="indiaAtTop" style="display: none">In <i class="currentMonth"></i>, India topped the list while <span id="lastCountry"></span> came last, based on a composite score of all the indicators.</h3>
 
     <br>
 
     <div class="container-fluid">
         <div id="content-container">
-            <div class="row" style="margin-bottom: 40px!important">
+            <div class="row" style="margin-bottom: 0!important;">
                 <div class="col-12">
                     <div class="row">
                         <div class="col-4 text-center">
@@ -69,7 +70,7 @@
                             <button class="action-btns" onclick="changeCanvas(event, 'import_cover', 'Import cover')">Import cover</button>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row" style="margin-bottom: 8px!important">
                         
                         <div class="col-6 text-center">
                             <button class="action-btns" onclick="changeCanvas(event, 'exchange_rate_movement', 'Exchange rate movement')">Exchange rate movement</button>
@@ -80,6 +81,7 @@
                     </div>
                 </div>
             </div>
+            <br/>
             <div class="row">
                 <div class="col-7">
                     <div class="row">
@@ -134,13 +136,12 @@
     The <b>composite index score</b> is a normalized score based on an equally weighted average of normalized scores for each of the indicators. In calculating the normalized scores, the best-performing economy's value on any one parameter (say PMI) is taken as 100 and relative scores are derived based on the distance of each economy from that score for that month.
 
     The closest comparable periods have been considered for all economies. For real GDP growth most countries have reported data till January-March, where that is not available October-December data has been used.For other indicators, data is as of April, and where that is unavailable, it is as of March.<br>
-
-    <br>*Scores for earlier months are revised each month based on new data updates and estimate revisions.</h5><br>
+    <br>*Scores for earlier months are revised each month based on new data updates and estimate revisions.</h5>
 
     <h5>Source: Bloomberg, Mint calculation<br>
     All data as of 19 May 2020<br>
 
-    <br><b>Interactive built by Pooja Dantewadia</b></h5>
+    <br><b></b></h5>
 
 
 </body>

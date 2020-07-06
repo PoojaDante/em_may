@@ -116,6 +116,8 @@ function renderUI(resData) {
         lastValue.setAttribute('id', obj.name.toLowerCase() + '_lastValue')
         var countryCanvasContainer = document.createElement('div');
         countryCanvasContainer.append(countryCanvas);
+        countryCanvasContainer.style.position = "relative";
+        countryCanvasContainer.style.width = "100%";
         dataDiv.append(countryCanvasContainer);
         dataDiv.append(lastValue)
         var leftDataDiv = document.createElement('div');
@@ -164,16 +166,15 @@ function renderUI(resData) {
             score: trimmedCanvasData[trimmedCanvasData.length - 1].y
         })
     });
-
     if (indiasPosition === 1) {
         $("#indiaNotAtTop").css('display', 'none');
         $("#indiaAtTop").css('display', 'block');
-        $("#indiaAtTop #currentMonth").text(monthAbbreviationMap[monthValues[$("#slider1").val()].split('-')[0]])
+        $(".currentMonth").text(moment(monthValues[$("#slider1").val()], 'MMM-YY').format("MMMM YYYY"))
         $("#indiaAtTop #lastCountry").text(window.resData[window.resData.length-1].name)
     } else {
         $("#indiaNotAtTop").css('display', 'block');
         $("#indiaAtTop").css('display', 'none');
-        $("#indiaNotAtTop #currentMonth").text(monthAbbreviationMap[monthValues[$("#slider1").val()].split('-')[0]])
+        $(".currentMonth").text(moment(monthValues[$("#slider1").val()], 'MMM-YY').format("MMMM YYYY"))
         $("#indiaNotAtTop #topCountry").text(window.resData[0].name);
         $("#indiaNotAtTop #indiaPosition").text("No. "+indiasPosition)
         $("#indiaNotAtTop #lastCountry").text(window.resData[window.resData.length-1].name)
